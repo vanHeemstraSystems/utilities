@@ -8,7 +8,15 @@ var UtilityHook = require(__dirname+'/hook.js');
 var UtilityLoopKeys = require(__dirname+'/loopkeys.js');
 var UtilityChangeProto = require(__dirname+'/changeproto.js');
 var UtilityRecurse = require(__dirname+'/recurse.js');
-
+var UtilityBindEmitter = require(__dirname+'/bindemitter.js');
+var UtilityMergeOptions = require(__dirname+'/mergeoptions.js');
+var UtilityExtractPrimaryKey = require(__dirname+'/extractprimarykey.js');
+var UtilityUndefinedField = require(__dirname+'/undefinedfield.js');
+var UtilityStrictType = require(__dirname+'/stricttype.js');
+var UtilityExtraField = require(__dirname+'/extrafield.js');
+var UtilityLooseType = require(__dirname+'/loosetype.js');
+var UtilityPseudoTypeError = require(__dirname+'/pseudotypeerror.js');
+var UtilityValidateIfUndefined = require(__dirname+'/validateifundefined.js');
 var UtilityToArray = require(__dirname+'/toarray.js');
 
 /**
@@ -73,6 +81,77 @@ Utility.prototype.recurse = function() {
   return new UtilityRecurse();
 }
 
+/**
+ * Create a new UtilityBindEmitter object.
+ * @return {UtilityBindEmitter}
+ */
+Utility.prototype.bindEmitter = function() {
+  return new UtilityBindEmitter();
+}
+
+/**
+ * Create a new UtilityMergeOptions object.
+ * @return {UtilityMergeOptions}
+ */
+Utility.prototype.mergeOptions = function() {
+  return new UtilityMergeOptions();
+}
+
+/**
+ * Create a new UtilityExtractPrimaryKey object.
+ * @return {UtilityExtractPrimaryKey}
+ */
+Utility.prototype.extractPrimaryKey = function() {
+  return new UtilityExtractPrimaryKey();
+}
+
+/**
+ * Create a new UtilityUndefinedField object.
+ * @return {UtilityUndefinedField}
+ */
+Utility.prototype.undefinedField = function() {
+  return new UtilityUndefinedField();
+}
+
+/**
+ * Create a new UtilityStrictType object.
+ * @return {UtilityStrictType}
+ */
+Utility.prototype.strictType = function() {
+  return new UtilityStrictType();
+}
+
+/**
+ * Create a new UtilityExtraField object.
+ * @return {UtilityExtraField}
+ */
+Utility.prototype.extraField = function() {
+  return new UtilityExtraField();
+}
+
+/**
+ * Create a new UtilityLooseType object.
+ * @return {UtilityLooseType}
+ */
+Utility.prototype.looseType = function() {
+  return new UtilityLooseType();
+}
+
+/**
+ * Create a new UtilityPseudoTypeError object.
+ * @return {UtilityPseudoTypeError}
+ */
+Utility.prototype.pseudoTypeError = function() {
+  return new UtilityPseudoTypeError();
+}
+
+/**
+ * Create a new UtilityValidateIfUndefined object.
+ * @return {UtilityValidateIfUndefined}
+ */
+Utility.prototype.validateIfUndefined = function() {
+  return new UtilityValidateIfUndefined();
+}
 
 /**
  * Create a new UtilityToArray object.
