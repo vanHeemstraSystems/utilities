@@ -7,6 +7,7 @@ var UtilityTryCatch = require(__dirname+'/trycatch.js');
 var UtilityHook = require(__dirname+'/hook.js');
 var UtilityLoopKeys = require(__dirname+'/loopkeys.js');
 var UtilityChangeProto = require(__dirname+'/changeproto.js');
+var UtilityRecurse = require(__dirname+'/recurse.js');
 
 var UtilityToArray = require(__dirname+'/toarray.js');
 
@@ -64,7 +65,13 @@ Utility.prototype.changeProto = function() {
   return new UtilityChangeProto();
 }
 
-
+/**
+ * Create a new UtilityRecurse object.
+ * @return {UtilityRecurse}
+ */
+Utility.prototype.recurse = function() {
+  return new UtilityRecurse();
+}
 
 
 /**
