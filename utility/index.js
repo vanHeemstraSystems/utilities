@@ -5,6 +5,8 @@ var UtilityIsPlainObject = require(__dirname+'/isplainobject.js');
 var UtilityDeepCopy = require(__dirname+'/deepcopy.js');
 var UtilityTryCatch = require(__dirname+'/trycatch.js');
 var UtilityHook = require(__dirname+'/hook.js');
+var UtilityLoopKeys = require(__dirname+'/loopkeys.js');
+var UtilityChangeProto = require(__dirname+'/changeproto.js');
 
 var UtilityToArray = require(__dirname+'/toarray.js');
 
@@ -44,6 +46,22 @@ Utility.prototype.tryCatch = function() {
  */
 Utility.prototype.hook = function() {
   return new UtilityHook();
+}
+
+/**
+ * Create a new UtilityLoopKeys object.
+ * @return {UtilityLoopKeys}
+ */
+Utility.prototype.loopKeys = function() {
+  return new UtilityLoopKeys();
+}
+
+/**
+ * Create a new UtilityChangeProto object.
+ * @return {UtilityChangeProto}
+ */
+Utility.prototype.changeProto = function() {
+  return new UtilityChangeProto();
 }
 
 

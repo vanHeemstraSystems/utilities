@@ -105,3 +105,21 @@ function _asyncHook(args) {
   }
   return executeHooks(0, preHooks, doc, reject, nextPre);
 }
+
+function executeHooks(hookIndex, hooks, doc, reject, next) {
+  if (hookIndex < hooks.length) {
+    if (hooks[hookIndex].length === 1) {
+      hooks[hookIndex].call(doc, function(err) {
+        if (err) return reject(err);
+        executeHooks(hookIndex+1, hooks, doc, reject, next)
+      });
+    }
+    else {
+      hooks[hookIndex].call(doc);
+      executeHooks(hookIndex+1, hooks, doc, reject, next)
+    }
+  }
+  else {
+    next();
+  }
+}
