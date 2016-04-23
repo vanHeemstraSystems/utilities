@@ -1,7 +1,12 @@
 /*
  * index.js
  */
-var UtilityRoot = require(__dirname+'/root.js');
+var UtilityIsPlainObject = require(__dirname+'/isplainobject.js');
+var UtilityDeepCopy = require(__dirname+'/deepcopy.js');
+var UtilityTryCatch = require(__dirname+'/trycatch.js');
+var UtilityHook = require(__dirname+'/hook.js');
+
+var UtilityToArray = require(__dirname+'/toarray.js');
 
 /**
  * Create a new Utility that let users create sub-utilities.
@@ -10,20 +15,46 @@ var UtilityRoot = require(__dirname+'/root.js');
 function Utility() { }
 
 /**
- * Create a new UtilityRoot object.
- * @return {UtilityRoot}
+ * Create a new UtilityIsPlainObject object.
+ * @return {UtilityIsPlainObject}
  */
-Utility.prototype.root = function() {
-  return new UtilityRoot();
+Utility.prototype.isPlainObject = function() {
+  return new UtilityIsPlainObject();
 }
 
 /**
- * Check if the first argument is a UtilityRoot object or not
- * @param {Object} obj The object to check against UtilityRoot.
- * @return {boolean}
+ * Create a new UtilityDeepCopy object.
+ * @return {UtilityDeepCopy}
  */
-Utility.prototype.isRoot = function(obj) {
-  return obj instanceof UtilityRoot;
+Utility.prototype.deepCopy = function() {
+  return new UtilityDeepCopy();
+}
+
+/**
+ * Create a new UtilityTryCatch object.
+ * @return {UtilityTryCatch}
+ */
+Utility.prototype.tryCatch = function() {
+  return new UtilityTryCatch();
+}
+
+/**
+ * Create a new UtilityHook object.
+ * @return {UtilityHook}
+ */
+Utility.prototype.hook = function() {
+  return new UtilityHook();
+}
+
+
+
+
+/**
+ * Create a new UtilityToArray object.
+ * @return {UtilityToArray}
+ */
+Utility.prototype.toArray = function() {
+  return new UtilityToArray();
 }
 
 module.exports = new Utility();
