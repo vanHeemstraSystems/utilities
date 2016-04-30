@@ -189,4 +189,4 @@ Utility.prototype.toArray = function() {
   return new UtilityToArray();
 }
 
-module.exports = new Utility();
+module.exports = Utility;
