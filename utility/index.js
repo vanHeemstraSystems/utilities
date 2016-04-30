@@ -19,11 +19,23 @@ var UtilityPseudoTypeError = require(__dirname+'/pseudotypeerror.js');
 var UtilityValidateIfUndefined = require(__dirname+'/validateifundefined.js');
 var UtilityToArray = require(__dirname+'/toarray.js');
 
+var self = this; // set the context locally, for access protection
+
 /**
  * Create a new Utility that let users create sub-utilities.
  * @return {Utility}
  */
-function Utility() { }
+function Utility() { 
+  self._promise = {};  // will be set, before passing on to mapping
+}
+
+Utility.prototype.promise = function() {
+  return self._promise;
+}
+
+Utility.prototype.setpromise = function(fnOrValue) {
+  self._promise = fnOrValue;
+}
 
 /**
  * Create a new UtilityIsPlainObject object.
@@ -54,7 +66,10 @@ Utility.prototype.tryCatch = function() {
  * @return {UtilityHook}
  */
 Utility.prototype.hook = function() {
-  return new UtilityHook();
+  this._utilityHook = new UtilityHook();
+  this._utilityHook.setpromise(self.promise());
+  //return new UtilityHook();
+  return this._utilityHook;
 }
 
 /**
