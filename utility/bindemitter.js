@@ -8,6 +8,7 @@ var self = this; // set the context locally, for access protection
  */
 function BindEmitter() {
   self._eventEmitter = {};
+  self._utility = {};
 }
 
 BindEmitter.prototype.eventemitter = function() {
@@ -18,9 +19,17 @@ BindEmitter.prototype.seteventemitter = function(fnOrValue) {
   self._eventEmitter = fnOrValue;
 }
 
+BindEmitter.prototype.utility = function() {
+  return self._utility;
+}
+
+BindEmitter.prototype.setutility = function(fnOrValue) {
+  self._utility = fnOrValue;
+}
+
 BindEmitter.prototype.bindemitter = function(self) {
   //ORIGINAL util.loopKeys(EventEmitter.prototype, function(emitter, key) {
-  util.loopKeys(self.eventemitter().prototype, function(emitter, key) { // WE NEED TO REDEFINE util HERE 
+  self.utility().loopKeys(self.eventemitter().prototype, function(emitter, key) { 
     var fn = emitter[key];
     if (typeof fn === 'function') {
       self[key] = function() {

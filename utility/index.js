@@ -112,6 +112,7 @@ Utility.prototype.recurse = function() {
 Utility.prototype.bindEmitter = function() {
   this._utilityBindEmitter = new UtilityBindEmitter();
   this._utilityBindEmitter.seteventemitter(self.event().eventemitter());
+  this._utilityBindEmitter.setutility(self); // DOES THIS WORK?
   // return new UtilityBindEmitter();
   return this._utilityBindEmitter;
 }
