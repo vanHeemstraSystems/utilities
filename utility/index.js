@@ -26,7 +26,16 @@ var self = this; // set the context locally, for access protection
  * @return {Utility}
  */
 function Utility() { 
+  self._event = {};  // will be set, before passing on to mapping
   self._promise = {};  // will be set, before passing on to mapping
+}
+
+Utility.prototype.event = function() {
+  return self._event;
+}
+
+Utility.prototype.setevent = function(fnOrValue) {
+  self._event = fnOrValue;
 }
 
 Utility.prototype.promise = function() {
@@ -101,7 +110,10 @@ Utility.prototype.recurse = function() {
  * @return {UtilityBindEmitter}
  */
 Utility.prototype.bindEmitter = function() {
-  return new UtilityBindEmitter();
+  this._utilityBindEmitter = new UtilityBindEmitter();
+  this._utilityBindEmitter.seteventemitter(self.event().eventemitter());
+  // return new UtilityBindEmitter();
+  return this._utilityBindEmitter;
 }
 
 /**

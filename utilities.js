@@ -5,7 +5,7 @@ var UtilitiesUtility = require(__dirname+'/utility.js');
 
 /**
  * Create a new Utilities that let users create sub-utilities.
- * @return {Errors}
+ * @return {Utilities}
  */
 function Utilities() { }
 
