@@ -1,6 +1,10 @@
-//var EventEmitter = require('events').EventEmitter;
+/*
+ * Filename: bindemitter.js
+ */
 
-var self = this; // set the context locally, for access protection
+// The var EventEmitter = require('events').EventEmitter;
+
+var self = this; // Set the context locally, for access protection
 
 /**
  * Create a new BindEmitter that let users create sub-bindemitter.
@@ -28,13 +32,14 @@ BindEmitter.prototype.setutility = function(fnOrValue) {
 }
 
 BindEmitter.prototype.bindemitter = function(self) {
-  //ORIGINAL util.loopKeys(EventEmitter.prototype, function(emitter, key) {
-  self.utility().loopKeys(self.eventemitter().prototype, function(emitter, key) { 
+  // ORIGINAL util.loopKeys(EventEmitter.prototype, function(emitter, key) {
+  self.utility().loopKeys(self.eventemitter().prototype,
+    function(emitter, key) {
     var fn = emitter[key];
     if (typeof fn === 'function') {
       self[key] = function() {
         var args = new Array(arguments.length);
-        for(var i = 0; i < arguments.length; i++) {
+        for (var i = 0; i < arguments.length; i++) {
           args[i] = arguments[i];
         }
         fn.apply(self, args);

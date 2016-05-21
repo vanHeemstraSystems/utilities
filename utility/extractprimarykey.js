@@ -1,3 +1,6 @@
+/*
+ * Filename: extraprimarykey.js
+ */
 function extractPrimaryKey(oldValue, newValue, primaryKey) {
   var primaryKey;
   if (oldValue !== null) {
@@ -8,3 +11,5 @@ function extractPrimaryKey(oldValue, newValue, primaryKey) {
   }
   return undefined;
 }
+
+module.exports = extractPrimaryKey;

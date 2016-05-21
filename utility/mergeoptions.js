@@ -1,5 +1,10 @@
+/*
+ * File: mergeoptions.js
+ */
+var Utility = require(__dirname + '/index.js');
+
 function mergeOptions(options, newOptions) {
-  if (util.isPlainObject(newOptions)) {
+  if (Utility.isPlainObject(newOptions)) {
     if (!options) {
       options = {};
     }
@@ -11,3 +16,5 @@ function mergeOptions(options, newOptions) {
   }
   return options;
 }
+
+module.exports = mergeOptions;

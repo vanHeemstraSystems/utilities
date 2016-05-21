@@ -1,14 +1,14 @@
+/*
+ * Filename: hook.js
+ */
 var self = this;
-
-// var Promise = require(path.join(paths.libraries, '/bluebird.js'));
-
 
 /**
  * Create a new Hook that let users create sub-hook.
  * @return {Hook}
  */
 function Hook() {
-  
+  self._promise = {};
 }
 
 Hook.prototype.promise = function() {

@@ -1,14 +1,14 @@
-/**
+/*
+ * Filename: deepcopy.js
  * Make a "deep copy".
  * The prototype chain is not copied.
  */
 function deepCopy(value) {
   var result;
   if (value instanceof Buffer) {
-    // isPlainObject(buffer) returns true.
+    // The isPlainObject(buffer) returns true.
     return new Buffer(value);
   }
-
   if (isPlainObject(value) === true) {
     result = {};
     loopKeys(value, function(_value, key) {
@@ -18,14 +18,14 @@ function deepCopy(value) {
     });
     return result;
   }
-
   if (Array.isArray(value)) {
     result = []
-    for(var i=0; i<value.length; i++) {
+    for (var i = 0; i < value.length; i++) {
       result.push(deepCopy(value[i]));
     }
     return result;
   }
-
   return value;
 }
+
+module.exports = deepCopy;

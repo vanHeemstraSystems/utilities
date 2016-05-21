@@ -2,10 +2,12 @@
  * Wrap try/catch for v8
  */
 function tryCatch(toTry, handleError) {
-  try{
+  try {
     toTry()
   }
-  catch(err) {
+  catch (err) {
     handleError(err)
   }
 }
+
+module.exports = tryCatch;

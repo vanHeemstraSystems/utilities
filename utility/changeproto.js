@@ -1,6 +1,9 @@
-var self = this; // set the context locally, for access protection
+/*
+ * Filename: changeproto.js
+ */
+var self = this; // Set the context locally, for access protection
 
-function ChangeProto() { 
+function ChangeProto() {
   self = self.changeProto;
 }
 
@@ -9,7 +12,6 @@ ChangeProto.prototype.changeProto = function(object, newProto) {
 }
 
 module.exports = ChangeProto;
-
 // REMOVE ALL BELOW
 
 // function changeProto(object, newProto) {
