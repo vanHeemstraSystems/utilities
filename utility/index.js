@@ -266,7 +266,6 @@ Utility.prototype.tryCatch = function() {
 Utility.prototype.hook = function() {
   this._utilityHook = new UtilityHook();
   this._utilityHook.setpromise(self.promise());
-  //return new UtilityHook();
   return this._utilityHook;
 }
 
