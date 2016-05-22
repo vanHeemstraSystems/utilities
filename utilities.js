@@ -1,7 +1,7 @@
 /*
- * utilities.js
+ * Filename: utilities.js
  */
-var UtilitiesUtility = require(__dirname+'/utility.js');
+var UtilitiesUtility = require(__dirname + '/utility.js');
 
 /**
  * Create a new Utilities that let users create sub-utilities.

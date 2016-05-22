@@ -2,4 +2,4 @@
 //
 //export default Utility;
 
-module.exports = require(__dirname+'/utility/index.js');
+module.exports = require(__dirname + '/utility/index.js');
